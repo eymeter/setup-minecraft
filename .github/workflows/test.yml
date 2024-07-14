@@ -24,20 +24,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-      - name: Update
-        run: |
-          git config --global user.name "mcenv"
-          git config --global user.email "mcenv@users.noreply.github.com"
-          git worktree add dist dist
-          npm install
-          npm run package
-          cd dist
-          mv ../action.yml .
-          mv ../LICENSE .
-          mv ../README.md .
-          git add .
-          git commit --message "Update"
-          git push origin dist
       - name: Setup Minecraft
         id: minecraft
         uses: mcenv/setup-minecraft@dist
