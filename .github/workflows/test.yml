@@ -16,6 +16,9 @@ jobs:
     runs-on: ubuntu-latest
     continue-on-error: true
     steps:
+      - name: ls
+        run: |
+          ls
       - name: Checkout
         uses: actions/checkout@v4
         with:
