@@ -24,6 +24,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
+      - name: Update
+        run: |
+          npm install
+          npm run package
+          mv ../action.yml .
+          mv ../LICENSE .
+          mv ../README.md .
       - name: Setup Minecraft
         id: minecraft
         uses: mcenv/setup-minecraft@dist
